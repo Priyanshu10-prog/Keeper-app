@@ -7,16 +7,24 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-scripts": "5.0.1",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.2.0",
     "@mui/material": "7.2.0",
-    "@emotion/react": "11.14.0",
-    "@emotion/styled": "11.14.1"
+    "axios": "^1.10.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "postgres": "^3.4.7",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-router-dom": "^7.6.3",
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
@@ -28,5 +36,18 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "vite": "^7.0.0"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Priyanshu10-prog/Keeper-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Priyanshu10-prog/Keeper-app/issues"
+  },
+  "homepage": "https://github.com/Priyanshu10-prog/Keeper-app#readme"
 }

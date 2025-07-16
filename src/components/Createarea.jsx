@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import Zoom from "@mui/material/Zoom";
+import axios from "axios";
 
 function CreateArea(props) {
   const [text, setText] = useState({
@@ -21,12 +22,19 @@ function CreateArea(props) {
   }
   function handleClick(event) {
     event.preventDefault();
-    props.onClicked(text);
+    axios.post("http://localhost:3000/add", text).then(res =>{
+      props.onClicked(res.data);
     setText({
       title: "",
       content: "",
     });
     expandArea(false);
+
+    }).catch((err) => {
+      console.error("❌ Error from backend:", err); 
+      alert("Failed to add note. Check the console for details.");
+    });
+    
   }
 
   function expand() {
@@ -50,7 +58,7 @@ function CreateArea(props) {
           name="content"
           placeholder="type your content"
           value={text.content}
-          rows={textarea && "4"}
+          rows={textarea ? "4":"1"}
         />
         <Zoom in={textarea}>
           <Fab onClick={handleClick}>
